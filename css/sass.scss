@@ -1,3 +1,5 @@
+$border: 1px solid;
+
 @mixin flexbox() {
   display: -webkit-box;
   display: -moz-box;
@@ -48,25 +50,38 @@
   align-items: $value;
 }
 
+@mixin align-content($value) {
+  -webkit-align-content: $value;
+  align-content: $value;
+}
+
+@mixin border-sides($color) {
+  border: {
+    left: $border $color;
+    right: $border $color;
+  }
+}
+
 body {
   background-color: #DEDEDE;
-  padding: 0 2em;
+  padding: 0;
 
   @include flexbox();
-  @include justify-content(center);
   @include flex-direction(column);
 }
 
 header, section, footer {
   max-width: 1200px;
+  background-color: #FFF;
+
+  @include border-sides(#FCFCFC);
+  @include flex(1);
 }
 
 header {
   height: 95px;
-  background-color: #FFF;
-  flex: 1; 
   border : {
-    bottom: 1px solid #E4e4e4
+    bottom: $border #E4e4e4
   }
 
   .logo {
@@ -91,8 +106,47 @@ header {
   @include flexbox();
 }
 
-section {
+.intro {
   height: 305px;
-  background-color: #FFF;
-  flex: 1;
+  border: {
+    top: 1px solid #EFEFEF;
+    bottom: 1px solid #EFEFEF;
+  }
+}
+
+.latest-work {
+  height: 380px;
+  border: {
+    top: 1px solid #E4E4E4;
+    bottom: 1px solid #E7E7E7;
+  }
+}
+
+.about {
+  height: 360px;
+  background-color: #E5E5E5;
+  border: {
+    top: 1px solid #E4E4E4;
+    bottom: 1px solid #E2E2E2;
+  }
+
+  @include border-sides(#ECECEC);
+}
+
+footer {
+  height: 210px;
+  border-top: 1px solid #F2F2F2;
+}
+
+@media only screen and (min-width: 1200px) {
+    /* Style adjustments for viewports that meet the condition */
+    header, section, footer {
+        width: 1200px;
+    }
+    
+    body {
+      padding: 0;
+
+      @include align-items(center);
+    }
 }

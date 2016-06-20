@@ -1,13 +1,11 @@
 body {
   background-color: #DEDEDE;
-  padding: 0 2em;
+  padding: 0;
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
   -webkit-flex-direction: vertical;
   -moz-flex-direction: vertical;
   -ms-flex-direction: column;
@@ -15,12 +13,18 @@ body {
   flex-direction: column; }
 
 header, section, footer {
-  max-width: 1200px; }
+  max-width: 1200px;
+  background-color: #FFF;
+  border-left: 1px solid #FCFCFC;
+  border-right: 1px solid #FCFCFC;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
 
 header {
   height: 95px;
-  background-color: #FFF;
-  flex: 1;
   border-bottom: 1px solid #E4e4e4;
   -webkit-justify-content: space-around;
   justify-content: space-around;
@@ -42,9 +46,36 @@ header {
       text-decoration: none;
       color: #000; }
 
-section {
+.intro {
   height: 305px;
-  background-color: #FFF;
-  flex: 1; }
+  border-top: 1px solid #EFEFEF;
+  border-bottom: 1px solid #EFEFEF; }
+
+.latest-work {
+  height: 380px;
+  border-top: 1px solid #E4E4E4;
+  border-bottom: 1px solid #E7E7E7; }
+
+.about {
+  height: 360px;
+  background-color: #E5E5E5;
+  border-top: 1px solid #E4E4E4;
+  border-bottom: 1px solid #E2E2E2;
+  border-left: 1px solid #ECECEC;
+  border-right: 1px solid #ECECEC; }
+
+footer {
+  height: 210px;
+  border-top: 1px solid #F2F2F2; }
+
+@media only screen and (min-width: 1200px) {
+  /* Style adjustments for viewports that meet the condition */
+  header, section, footer {
+    width: 1200px; }
+
+  body {
+    padding: 0;
+    -webkit-align-items: center;
+    align-items: center; } }
 
 /*# sourceMappingURL=sass.css.map */
