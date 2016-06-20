@@ -1,4 +1,5 @@
 $border: 1px solid;
+$font: "HelveticaNeue-Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 
 @mixin flexbox() {
   display: -webkit-box;
@@ -55,93 +56,164 @@ $border: 1px solid;
   align-content: $value;
 }
 
-@mixin border-sides($color) {
-  border: {
-    left: $border $color;
-    right: $border $color;
-  }
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
 }
+
+/* begin css declarations */
 
 body {
   background-color: #DEDEDE;
   padding: 0;
+  font-size: 100%;
 
   @include flexbox();
   @include flex-direction(column);
 }
 
 header, section, footer {
-  max-width: 1200px;
+  max-width: 1600px;
   background-color: #FFF;
 
-  @include border-sides(#FCFCFC);
   @include flex(1);
 }
 
+/* header styling */
+
 header {
-  height: 95px;
-  border : {
-    bottom: $border #E4e4e4
-  }
+  height: 127px;
 
-  .logo {
-    font-family: sans-serif;
-    .red {
-      color: #CA0000;
-    }
-  }
-  
-  li {
-    display: inline-block;
-    list-style-type: none;
+  div {
+    padding: 0 20em;  
 
-    a {
+    .logo {
       text-decoration: none;
-      color: #000;
+      font: {
+        family: $font;
+        size: 1.1em;
+      }
+      color: #030303;
+      .red {
+        color: #CA0000;
+      }
     }
-  }
 
+/* nav links */
+
+    ul {
+      color: #CCC;
+    
+      li {
+        display: inline-block;
+        list-style-type: none;
+
+        a {
+          text-decoration: none;
+          color: #030303;
+          font: {
+            size: 1.125em;
+          }
+        }
+
+        .current {
+          color: #999;
+        }
+
+      }
+
+    }
+    @include flexbox();
+    @include flex(1);
+    @include justify-content(space-between);
+    @include align-items(center);
+  }
   @include justify-content(space-around);
   @include align-items(center);
   @include flexbox();
 }
 
+/* intro styling */
+
 .intro {
-  height: 305px;
+  height: 407px;
   border: {
-    top: 1px solid #EFEFEF;
-    bottom: 1px solid #EFEFEF;
+    top: $border #CCCCCC;
+    bottom: $border #CCCCCC;
   }
+  div {
+    padding: 5.625em 0 6.25em;
+
+    .intro-head {
+      font: {
+        size: 2.2em;
+        family: $font;
+        weight: 600;
+      }
+      color: #030303;
+      margin: 0;
+    }
+    
+    .intro-mission {
+      position: relative;
+      bottom: 7px;
+      text-align: center;
+      color: #030303;
+      line-height: 1.6em;
+      font: {
+        size: .95em;
+        family: $font;
+      }
+      margin: 0;
+      padding: 0 26.25em;
+    }
+
+    .intro-hire-me {
+      background-color: #222;
+      color: #FFF;
+      width: 140px;
+      height: 45px;
+      border-style: none;
+      font: {
+        family: $font;
+        size: 1.05em;
+      }
+      vertical-align: center;
+
+      @include border-radius(5px)
+    }
+    
+    @include flexbox();
+    @include flex(1);
+    @include flex-direction(column);
+    @include justify-content(space-between);
+    @include align-items(center);
+  }
+
+  @include flexbox();
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(center);
 }
 
 .latest-work {
-  height: 380px;
-  border: {
-    top: 1px solid #E4E4E4;
-    bottom: 1px solid #E7E7E7;
-  }
+  height: 506px;
 }
 
 .about {
   height: 360px;
   background-color: #E5E5E5;
-  border: {
-    top: 1px solid #E4E4E4;
-    bottom: 1px solid #E2E2E2;
-  }
-
-  @include border-sides(#ECECEC);
 }
 
 footer {
   height: 210px;
-  border-top: 1px solid #F2F2F2;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1600px) {
     /* Style adjustments for viewports that meet the condition */
     header, section, footer {
-        width: 1200px;
+        width: 1600px;
     }
     
     body {
