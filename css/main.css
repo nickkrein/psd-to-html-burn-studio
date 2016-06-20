@@ -95,8 +95,12 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
-
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #DEDEDE;
+    padding: 0 2em;
+}
 
 
 

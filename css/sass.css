@@ -1,0 +1,50 @@
+body {
+  background-color: #DEDEDE;
+  padding: 0 2em;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: vertical;
+  -moz-flex-direction: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column; }
+
+header, section, footer {
+  max-width: 1200px; }
+
+header {
+  height: 95px;
+  background-color: #FFF;
+  flex: 1;
+  border-bottom: 1px solid #E4e4e4;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; }
+  header .logo {
+    font-family: sans-serif; }
+    header .logo .red {
+      color: #CA0000; }
+  header li {
+    display: inline-block;
+    list-style-type: none; }
+    header li a {
+      text-decoration: none;
+      color: #000; }
+
+section {
+  height: 305px;
+  background-color: #FFF;
+  flex: 1; }
+
+/*# sourceMappingURL=sass.css.map */

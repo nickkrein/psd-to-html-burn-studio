@@ -1,0 +1,98 @@
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flex($values) {
+  -webkit-box-flex: $values;
+  -moz-box-flex:  $values;
+  -webkit-flex:  $values;
+  -ms-flex:  $values;
+  flex:  $values;
+}
+
+@mixin order($val) {
+  -webkit-box-ordinal-group: $val;  
+  -moz-box-ordinal-group: $val;     
+  -ms-flex-order: $val;     
+  -webkit-order: $val;  
+  order: $val;
+}
+
+@mixin flex-direction($direction) {
+  @if $direction == column {
+    -webkit-flex-direction:vertical;
+    -moz-flex-direction:vertical;
+    -ms-flex-direction:column;
+    -webkit-flex-direction:column;
+    flex-direction:column;
+  } @else {
+    -webkit-flex-direction:horizontal;
+    -moz-flex-direction:horizontal;
+    -ms-flex-direction:row;
+    -webkit-flex-direction:row;
+    flex-direction:row;
+  }
+}
+
+@mixin justify-content($value) {
+  -webkit-justify-content: $value;
+  justify-content: $value;
+}
+
+@mixin align-items($value) {
+  -webkit-align-items: $value;
+  align-items: $value;
+}
+
+body {
+  background-color: #DEDEDE;
+  padding: 0 2em;
+
+  @include flexbox();
+  @include justify-content(center);
+  @include flex-direction(column);
+}
+
+header, section, footer {
+  max-width: 1200px;
+}
+
+header {
+  height: 95px;
+  background-color: #FFF;
+  flex: 1; 
+  border : {
+    bottom: 1px solid #E4e4e4
+  }
+
+  .logo {
+    font-family: sans-serif;
+    .red {
+      color: #CA0000;
+    }
+  }
+  
+  li {
+    display: inline-block;
+    list-style-type: none;
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+
+  @include justify-content(space-around);
+  @include align-items(center);
+  @include flexbox();
+}
+
+section {
+  height: 305px;
+  background-color: #FFF;
+  flex: 1;
+}
