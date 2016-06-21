@@ -35,7 +35,7 @@ header {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex; }
-  header div {
+  header .header-container {
     padding: 0 20em;
     /* nav links */
     display: -webkit-box;
@@ -52,28 +52,28 @@ header {
     justify-content: space-between;
     -webkit-align-items: center;
     align-items: center; }
-    header div .logo {
+    header .header-container .logo {
       text-decoration: none;
       font-family: "HelveticaNeue-Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
       font-size: 1.1em;
       color: #030303; }
-      header div .logo .red {
+      header .header-container .logo .red {
         color: #CA0000; }
-    header div ul {
+    header .header-container ul {
       color: #CCC; }
-      header div ul li {
+      header .header-container ul li {
         display: inline-block;
         list-style-type: none; }
-        header div ul li a {
+        header .header-container ul li a {
           text-decoration: none;
           color: #030303;
           font-size: 1.125em; }
-        header div ul li .current {
+        header .header-container ul li .current {
           color: #999; }
 
 /* intro styling */
 .intro {
-  height: 407px;
+  height: 406px;
   border-top: 1px solid #CCCCCC;
   border-bottom: 1px solid #CCCCCC;
   display: -webkit-box;
@@ -90,7 +90,7 @@ header {
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center; }
-  .intro div {
+  .intro .intro-container {
     padding: 5.625em 0 6.25em;
     display: -webkit-box;
     display: -moz-box;
@@ -111,13 +111,13 @@ header {
     justify-content: space-between;
     -webkit-align-items: center;
     align-items: center; }
-    .intro div .intro-head {
+    .intro .intro-container .intro-head {
       font-size: 2.2em;
       font-family: "HelveticaNeue-Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
       font-weight: 600;
       color: #030303;
       margin: 0; }
-    .intro div .intro-mission {
+    .intro .intro-container .intro-mission {
       position: relative;
       bottom: 7px;
       text-align: center;
@@ -127,11 +127,13 @@ header {
       font-family: "HelveticaNeue-Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
       margin: 0;
       padding: 0 26.25em; }
-    .intro div .intro-hire-me {
+    .intro .intro-container .intro-hire-me {
       background-color: #222;
+      position: relative;
+      top: 1px;
       color: #FFF;
       width: 140px;
-      height: 45px;
+      height: 44px;
       border-style: none;
       font-family: "HelveticaNeue-Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
       font-size: 1.05em;
@@ -142,10 +144,98 @@ header {
       /* stops bg color from leaking outside the border: */ }
 
 .latest-work {
-  height: 506px; }
+  height: 506px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: vertical;
+  -moz-flex-direction: vertical;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: space-between;
+  align-items: space-between;
+  -webkit-justify-content: center;
+  justify-content: center; }
+  .latest-work .latest-work-container {
+    padding: 2.8em 20em 6.275em;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -webkit-flex-direction: vertical;
+    -moz-flex-direction: vertical;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-between;
+    justify-content: space-between; }
+    .latest-work .latest-work-container .latest-work-head {
+      margin: 0;
+      color: #030303;
+      font-size: 1.8em;
+      font-family: "HelveticaNeue-Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      font-weight: 600; }
+    .latest-work .latest-work-container .project-container {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: horizontal;
+      -moz-flex-direction: horizontal;
+      -ms-flex-direction: row;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      -webkit-justify-content: space-between;
+      justify-content: space-between; }
+      .latest-work .latest-work-container .project-container .project {
+        height: 277px;
+        width: 298px;
+        border: 1px solid #CCC;
+        -webkit-border-bottom-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        -webkit-border-bottom-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        background-clip: padding-box; }
+        .latest-work .latest-work-container .project-container .project img {
+          height: 199px;
+          width: 100%;
+          background-color: #CCC; }
+        .latest-work .latest-work-container .project-container .project div {
+          height: 78px;
+          color: #666;
+          line-height: 2em;
+          font-family: "HelveticaNeue-Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+          font-size: .9em;
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-flex-direction: vertical;
+          -moz-flex-direction: vertical;
+          -ms-flex-direction: column;
+          -webkit-flex-direction: column;
+          flex-direction: column;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-align-items: center;
+          align-items: center; }
+          .latest-work .latest-work-container .project-container .project div h3 {
+            color: #222;
+            margin: 0; }
 
 .about {
-  height: 483px;
+  height: 482px;
   background-color: #E5E5E5; }
 
 footer {

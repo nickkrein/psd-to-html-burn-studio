@@ -62,6 +62,14 @@ $font: "HelveticaNeue-Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande
   background-clip: padding-box;  /* stops bg color from leaking outside the border: */
 }
 
+@mixin border-bottom-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+   -webkit-border-bottom-left-radius: $radius;
+   border-bottom-left-radius: $radius;
+   background-clip: padding-box;
+}
+
 /* begin css declarations */
 
 body {
@@ -85,7 +93,7 @@ header, section, footer {
 header {
   height: 127px;
 
-  div {
+  .header-container {
     padding: 0 20em;  
 
     .logo {
@@ -137,12 +145,12 @@ header {
 /* intro styling */
 
 .intro {
-  height: 407px;
+  height: 406px;
   border: {
     top: $border #CCCCCC;
     bottom: $border #CCCCCC;
   }
-  div {
+  .intro-container {
     padding: 5.625em 0 6.25em;
 
     .intro-head {
@@ -171,9 +179,11 @@ header {
 
     .intro-hire-me {
       background-color: #222;
+      position: relative;
+      top: 1px;
       color: #FFF;
       width: 140px;
-      height: 45px;
+      height: 44px;
       border-style: none;
       font: {
         family: $font;
@@ -199,10 +209,77 @@ header {
 
 .latest-work {
   height: 506px;
+
+  .latest-work-container {
+    padding: 2.8em 20em 6.275em;
+
+
+    .latest-work-head {
+      margin: 0;
+      color: #030303;
+      font: {
+        size: 1.8em;
+        family: $font;
+        weight: 600;
+      }
+    }
+
+    .project-container {
+      .project {
+        height: 277px;
+        width: 298px;
+        border: $border #CCC;
+
+        img {
+          height: 199px;
+          width: 100%;
+          background-color: #CCC;
+        }
+        
+        div {
+          height: 78px;
+          color: #666;
+          line-height: 2em;
+          font: {
+            family: $font;
+            size: .9em;
+          }
+
+          h3 {
+            color: #222;
+            margin: 0;
+          }
+
+          @include flexbox();
+          @include flex-direction(column);
+          @include justify-content(center);
+          @include align-items(center);
+        }
+
+
+        @include border-bottom-radius(5px);
+      }
+
+      @include flexbox();
+      @include flex-direction(row);
+      @include justify-content(space-between);
+    }
+
+    @include flexbox();
+    @include flex(1);
+    @include flex-direction(column);
+    @include justify-content(space-between);
+
+  }
+
+  @include flexbox();
+  @include flex-direction(column);
+  @include align-items(space-between);
+  @include justify-content(center);
 }
 
 .about {
-  height: 483px;
+  height: 482px;
   background-color: #E5E5E5;
 }
 
